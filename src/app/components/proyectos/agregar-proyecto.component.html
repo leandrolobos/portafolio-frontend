@@ -1,0 +1,42 @@
+<body class="text-center">
+    <main class="form-signin">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <h1 class="h3 mb-3 fw-normal">Proyecto</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Título" id="title" name="title" [(ngModel)]="title" required>
+                <label for="position">Título</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Descripción" id="description" name="description" [(ngModel)]="description" required>
+                <label for="company">Descripción</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Período" id="lapse" name="lapse" [(ngModel)]="lapse" required>
+                <label for="lapse">Período</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link de la imagen" id="url_img" name="url_img" [(ngModel)]="url_img" required>
+                <label for="url_img">Link de la imagen</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link del proyecto" id="link_proyecto" name="link_proyecto" [(ngModel)]="link_proyecto" required>
+                <label for="url_img">Link del proyecto</label>
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Agregar</button>
+            </div>
+
+            <div class="mt-2">
+                <a href=""><small>Volver a la página de inicio</small></a>
+            </div>
+            
+            <p class="mt-5 mb-3 text-muted">© Leandro Lobos</p>
+        </form>
+    </main>
+</body>

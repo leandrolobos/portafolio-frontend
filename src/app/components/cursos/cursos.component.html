@@ -1,0 +1,24 @@
+<div class="card mt-3">
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title">Cursos</h4>
+        <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/agregar-curso">Agregar</button>
+    </div>
+
+    <div class="card" *ngFor="let curso of cursos">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="curso.url_img" class="img-fluid rounded-start" width="200" height="200" alt="...">
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{curso.institution}}</h5>
+                    <p class="card-text">{{curso.course}}</p>
+                    <p class="card-text"><small class="text-muted">{{curso.lapse}}</small></p>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/editar-curso/{{curso.id}}">Editar</button>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-danger m-2" (click)="onDelete(curso.id)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

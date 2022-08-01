@@ -1,0 +1,32 @@
+<head>
+    <link href="login.component.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <main class="form-signin">
+        <form>
+            <img class="img-fluid rounded-circle" src="./assets/img/perfil.jpg" alt="..." width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" name="username" [(ngModel)]="username">
+                <label for="floatingInput">Usuario</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="password" [(ngModel)]="password">
+                <label for="floatingPassword">Contraseña</label>
+            </div>
+
+            <div>
+                <button (click)=checkLogin() class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Ingresar</button>
+            </div>
+
+            <div class="mt-2">
+                <a href=""><small>Volver a la página de inicio</small></a>
+            </div>
+            
+            <p class="mt-5 mb-3 text-muted">© Leandro Lobos</p>
+        </form>
+    </main>
+</body>

@@ -1,0 +1,52 @@
+<body class="text-center">
+    <main class="form-signin" *ngIf="persona">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <h1 class="h3 mb-3 fw-normal">Encabezado</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" [(ngModel)]="persona.name" required>
+                <label for="position">Nombre</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Puesto" id="position" name="position" [(ngModel)]="persona.position" required>
+                <label for="position">Puesto</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Ubicación" id="ubication" name="ubication" [(ngModel)]="persona.ubication" required>
+                <label for="company">Ubicación</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Edad" id="age" name="age" [(ngModel)]="persona.age" required>
+                <label for="lapse">Edad</label>
+            </div>
+
+            <div class="form-floating">
+                <textarea type="text" class="form-control" rows="10" style="height:100%" placeholder="Acerca de" id="about" name="about" [(ngModel)]="persona.about" required></textarea>
+                <label for="lapse">Acerca de</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link de la imagen de perfil" id="url_perfil" name="url_perfil" [(ngModel)]="persona.url_perfil" required>
+                <label for="url_img">Link de la imagen de perfil</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link de la imagen de portada" id="url_cover" name="url_cover" [(ngModel)]="persona.url_cover" required>
+                <label for="url_img">Link de la imagen de portada</label>
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Editar</button>
+            </div>
+
+            <div class="mt-2">
+                <a href=""><small>Volver a la página de inicio</small></a>
+            </div>
+            
+            <p class="mt-5 mb-3 text-muted">© Leandro Lobos</p>
+        </form>
+    </main>
+</body>

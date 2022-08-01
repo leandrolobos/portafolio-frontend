@@ -1,0 +1,37 @@
+<body class="text-center">
+    <main class="form-signin" *ngIf="educacion">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <h1 class="h3 mb-3 fw-normal">Educación</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Carrera" id="carrer" name="carrer" [(ngModel)]="educacion.carrer" required>
+                <label for="position">Carrera</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Universidad" id="university" name="university" [(ngModel)]="educacion.university" required>
+                <label for="company">Universidad</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Período" id="lapse" name="lapse" [(ngModel)]="educacion.lapse" required>
+                <label for="lapse">Período</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link de la imagen" id="url_img" name="url_img" [(ngModel)]="educacion.url_img" required>
+                <label for="url_img">Link de la imagen</label>
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Editar</button>
+            </div>
+
+            <div class="mt-2">
+                <a href=""><small>Volver a la página de inicio</small></a>
+            </div>
+            
+            <p class="mt-5 mb-3 text-muted">© Leandro Lobos</p>
+        </form>
+    </main>
+</body>

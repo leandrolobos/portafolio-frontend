@@ -1,0 +1,20 @@
+<div class="card mt-3">
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title">Skills</h4>
+        <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/agregar-skill">Agregar</button>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let skill of habilidades">
+            <div class="card">
+                <div class="card-body">
+                    <img [src]="skill.url_img" class="img-fluid rounded-start" width="200" height="200" alt="...">    
+                    <h5 class="card-title">{{skill.skill}}</h5>
+                    <p class="card-text">{{skill.description}}</p>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/editar-skill/{{skill.id}}">Editar</button>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-danger m-2" (click)="onDelete(skill.id)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

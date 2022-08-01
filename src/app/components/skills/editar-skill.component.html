@@ -1,0 +1,32 @@
+<body class="text-center">
+    <main class="form-signin" *ngIf="habilidad">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <h1 class="h3 mb-3 fw-normal">Skill</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Skill" id="skill" name="skill" [(ngModel)]="habilidad.skill" required>
+                <label for="position">Skill</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Descripción" id="description" name="description" [(ngModel)]="habilidad.description" required>
+                <label for="company">Descripción</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Link de la imagen" id="url_img" name="url_img" [(ngModel)]="habilidad.url_img" required>
+                <label for="url_img">Link de la imagen</label>
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Editar</button>
+            </div>
+
+            <div class="mt-2">
+                <a href=""><small>Volver a la página de inicio</small></a>
+            </div>
+            
+            <p class="mt-5 mb-3 text-muted">© Leandro Lobos</p>
+        </form>
+    </main>
+</body>

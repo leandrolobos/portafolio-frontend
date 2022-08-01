@@ -1,0 +1,24 @@
+<div class="card mt-3">
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title">Experiencia laboral</h4>
+        <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/agregar-experiencia">Agregar</button>
+    </div>
+
+    <div class="card" *ngFor="let exp of experiencias">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="exp.url_img" class="img-fluid rounded-start" width="200" height="200" alt="">
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{exp.position}}</h5>
+                    <p class="card-text">{{exp.company}}</p>
+                    <p class="card-text"><small class="text-muted">{{exp.lapse}}</small></p>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/editar-experiencia/{{exp.id}}">Editar</button>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-danger m-2" (click)="onDelete(exp.id)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

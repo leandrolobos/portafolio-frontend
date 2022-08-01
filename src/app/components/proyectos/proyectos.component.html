@@ -1,0 +1,25 @@
+<div class="card mt-3">
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title">Proyectos</h4>
+        <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary" routerLink="/agregar-proyecto">Agregar</button>
+    </div>
+
+    <div class="card" *ngFor="let proyecto of proyectos">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="proyecto.url_img" class="img-fluid rounded-start" width="200" height="200" alt="...">
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{proyecto.title}}</h5>
+                    <p class="card-text">{{proyecto.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{proyecto.lapse}}</small></p>
+                    <a href="{{proyecto.link_proyecto}}" class="btn btn-dark" target="_blank">Link del proyecto</a>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-secondary m-2" routerLink="/editar-proyecto/{{proyecto.id}}">Editar</button>
+                    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn btn-danger" (click)="onDelete(proyecto.id)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

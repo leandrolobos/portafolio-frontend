@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/img/argentina-programa.jpg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+        #YoProgramo
+      </a>
+
+      <form class="d-flex">
+        <a class="navbar-brand" href="https://www.linkedin.com/in/leandrolobos/" target="_blank">
+            <img src="./assets/img/linkedin.png" alt="" width="30" height="30">
+        </a>
+        <a class="navbar-brand" href="https://github.com/leandrolobos" target="_blank">
+            <img src="./assets/img/github.png" alt="" width="30" height="30">
+        </a>
+        <button *ngIf="!loginService.isUserLoggedIn()" class="btn btn-outline-secondary" type="submit" [routerLink]="['login']">Iniciar sesión</button>
+        <button *ngIf="loginService.isUserLoggedIn()" class="btn btn-outline-secondary" type="submit" [routerLink]="['logout']">Cerrar sesión</button>
+      </form>
+    </div>
+</nav>
